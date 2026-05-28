@@ -1,4 +1,4 @@
-package br.cnj.projeto.controllers;
+package br.cnj.projeto.controller;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.cnj.projeto.exceptions.CasoDuplicadoException;
-import br.cnj.projeto.services.CasoJudicialService;
-import br.cnj.projeto.util.CasoJudicial;
+import br.cnj.projeto.model.CasoJudicial;
+import br.cnj.projeto.service.CasoJudicialService;
 
 @RestController
 @RequestMapping("/api/casos")
@@ -24,7 +24,6 @@ public class CasoJudicialController {
 
 	private final CasoJudicialService service;
 	
-	@Autowired
 	public CasoJudicialController(CasoJudicialService service) {
 		this.service = service;
 	}
@@ -43,11 +42,8 @@ public class CasoJudicialController {
 	
 	@PostMapping
 	public ResponseEntity<CasoJudicial> criarNovoCaso(@RequestBody CasoJudicial novoCaso) throws CasoDuplicadoException{
-		if(service.existe(novoCaso)) {
-			throw new CasoDuplicadoException("Caso duplicado!");
-		}
-		CasoJudicial caso = service.criarNovoCaso(novoCaso);
-		return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(caso);
+		service.criarNovoCaso(novoCaso);
+		return ResponseEntity.ok(novoCaso);
 	}
 	
 	@PutMapping("/{id}")

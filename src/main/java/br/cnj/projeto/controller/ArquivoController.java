@@ -1,4 +1,4 @@
-package br.cnj.projeto.controllers;
+package br.cnj.projeto.controller;
 
 import java.io.IOException;
 import java.nio.file.Files;

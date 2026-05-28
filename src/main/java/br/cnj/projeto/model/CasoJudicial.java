@@ -1,12 +1,28 @@
-package br.cnj.projeto.util;
+package br.cnj.projeto.model;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CasosJudiciais")
 public class CasoJudicial {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int numero;
 	private char decisao;
 	private String descricao;
 	
+	
+	
+	public CasoJudicial() {
+	}
+
+
 	public CasoJudicial(int numero, char decisao, String descricao) {
 		this.numero = numero;
 		this.decisao = decisao;

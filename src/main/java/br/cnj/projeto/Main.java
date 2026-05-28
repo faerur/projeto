@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.cnj.projeto.util.CasoJudicial;
+import br.cnj.projeto.model.CasoJudicial;
 
 @SpringBootApplication
 public class Main implements CommandLineRunner{
