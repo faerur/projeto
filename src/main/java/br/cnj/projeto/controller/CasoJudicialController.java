@@ -41,7 +41,7 @@ public class CasoJudicialController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<CasoJudicial> criarNovoCaso(@RequestBody CasoJudicial novoCaso) throws CasoDuplicadoException{
+	public ResponseEntity<CasoJudicial> criarNovoCaso(@RequestBody CasoJudicial novoCaso){
 		service.criarNovoCaso(novoCaso);
 		return ResponseEntity.ok(novoCaso);
 	}

@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 @Service
-@Transactional
 public class CasoJudicialService {
 
 	private final CasoJudicialDAO casoJudicialDAO;
