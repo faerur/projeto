@@ -53,7 +53,7 @@ public class CasoJudicialDAOImpl implements CasoJudicialDAO{
 
 	@Override
 	public void delete(int id) {
-		CasoJudicial caso = findByID(id);
+		CasoJudicial caso = entityManager.find(CasoJudicial.class, id);
 		if(caso != null) {
 			entityManager.remove(caso);
 		} 

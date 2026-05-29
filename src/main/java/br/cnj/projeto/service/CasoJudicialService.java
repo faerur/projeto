@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 
 import br.cnj.projeto.dao.CasoJudicialDAO;
 import br.cnj.projeto.model.CasoJudicial;
+import jakarta.transaction.Transactional;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 
 @Service
+@Transactional
 public class CasoJudicialService {
 
 	private final CasoJudicialDAO casoJudicialDAO;
